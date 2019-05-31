@@ -77,7 +77,7 @@
       font-size: .16rem;
       color: #999;
       transform: translateX(-0.08rem);
-      margin-bottom: 1.7rem;
+      margin-bottom: 1.81rem;
       .btn{
         margin-right: .16rem;
         transition: all .1s;
