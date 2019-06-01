@@ -94,12 +94,9 @@
                     z-index: 2;
                     background-color: #F1EDE6;
                     transition: transform .3s;
-                    transform: scaleX(0);
                 }
                 &:hover{
                     &:after{
-                        height: 2px;
-                        transform: scaleX(1);
                         background-color: #000;
                     }
                 }
