@@ -1,9 +1,5 @@
 <template>
     <div class="binding-result">
-        <div class="header">
-            <img src="" class="icon" alt="">
-            <span>绑定结果</span>
-        </div>
         <div class="content">
             <img :src="result ? successImg : errorImg" class="icon" alt="">
             <p :class="result ? '' : 'error'" class="title">
@@ -41,16 +37,6 @@
         height: 100%;
         position: relative;
         padding: 1.08rem .24rem 0;
-        .header{
-            width: 100%;
-            height: .42rem;
-            line-height: .42rem;
-            text-align: center;
-            font-size: 0.18rem;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
         .content{
             text-align: center;
             .icon{

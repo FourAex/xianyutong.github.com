@@ -17,53 +17,46 @@
         </div>
         <p class="deteils-title">收益明细</p>
         <ul class="detail-list">
-           <li v-for="(item,index) in list" :key="index" class="item">
-               <p class="title">
-                   <span class="left">支付宝账号:&nbsp;17384057896</span>
-                   <img @click="changeStatus(index)" :src='item.img' class="icon" alt="">
-               </p>
-               <div class="info clearfloat">
-                   <div class="panel">
-                       <p class="text">今日收益(元)</p>
-                       <p class="count">{{accountBalance.toLocaleString()}}</p>
-                   </div>
-                   <div class="panel">
-                       <p class="text">累计收益(元)</p>
-                       <p class="count">{{accountBalance.toLocaleString()}}</p>
-                   </div>
-               </div>
-               <div class="info clearfloat">
-                   <div class="panel">
-                       <p class="text">今日收款(元)</p>
-                       <p class="count">{{accountBalance.toLocaleString()}}</p>
-                   </div>
-                   <div class="panel">
-                       <p class="text">累计收款(元)</p>
-                       <p class="count">{{accountBalance.toLocaleString()}}</p>
-                   </div>
-               </div>
-           </li>
-            <li class="add">
+            <li v-for="(item,index) in list" :key="index" class="item panel-item">
+                <p class="title">
+                    <span class="left">支付宝账号:&nbsp;17384057896</span>
+                    <img @click="changeStatus(index)" :src='item.img' class="icon" alt="">
+                </p>
+                <div class="info clearfloat">
+                    <div class="panel">
+                        <p class="text">今日收益(元)</p>
+                        <p class="count">{{accountBalance.toLocaleString()}}</p>
+                    </div>
+                    <div class="panel">
+                        <p class="text">累计收益(元)</p>
+                        <p class="count">{{accountBalance.toLocaleString()}}</p>
+                    </div>
+                </div>
+                <div class="info clearfloat">
+                    <div class="panel">
+                        <p class="text">今日收款(元)</p>
+                        <p class="count">{{accountBalance.toLocaleString()}}</p>
+                    </div>
+                    <div class="panel">
+                        <p class="text">累计收款(元)</p>
+                        <p class="count">{{accountBalance.toLocaleString()}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="add panel-item">
                 <div class="row">
                     <span class="pull-left">最多可绑定5个支付宝</span>
                     <span @click="goToBinding" class="pull-right">继续绑定</span>
                 </div>
             </li>
-            <li class="add">
+            <li class="add panel-item">
                 <div class="row">
                     <span class="pull-left">您还未绑定支付宝</span>
                     <span @click="goToBinding" class="pull-right">马上绑定</span>
                 </div>
             </li>
         </ul>
-        <div class="footer">
-            <ul class="nav-list">
-                <li @click="changeNav(index)" v-for="(item,index) in navList" :key="index" :class="item.status ? 'status' : ''" class="item">
-                    <img :src="item.status ? item.activeImg : item.hideImg" class="icon" alt="">
-                    <span>{{item.title}}</span>
-                </li>
-            </ul>
-        </div>
+
     </div>
 </template>
 
@@ -85,26 +78,6 @@
             status: true,
           }
         ],
-        navList: [
-          {
-            activeImg: require('../../assets/img/dh_sy_2@3x.png'),
-            hideImg: require('../../assets/img/dh_sy_1@3x.png'),
-            status: true,
-            title: '首页'
-          },
-          {
-            activeImg: require('../../assets/img/dh_zj_2@3x.png'),
-            hideImg: require('../../assets/img/dh_zj_1@3x.png'),
-            status: false,
-            title: '资金'
-          },
-          {
-            activeImg: require('../../assets/img/dh_wd_2@3x.png'),
-            hideImg: require('../../assets/img/dh_wd_1@3x.png'),
-            status: false,
-            title: '我的'
-          }
-        ]
       }
     },
     methods: {
@@ -113,11 +86,6 @@
         let status = target.status;
         target.status = !status;
         target.img = status ? GUAN_IMAGE : KAI_IMAGE;
-      },
-      changeNav(index){
-        this.navList.forEach((item,i) => {
-          item.status = index === i;
-        })
       },
       goToBinding(){
         this.$router.push('/binding');
@@ -132,7 +100,7 @@
         min-height: 100%;
         display: flex;
         flex-direction: column;
-        padding: 0.08rem .16rem .65rem;
+        padding: 0.08rem .16rem 0;
         .top{
             font-size: .24rem;
             color: #000;
@@ -196,7 +164,12 @@
             margin-bottom: .16rem;
         }
         .detail-list{
-            flex: 1;
+            width: 100%;
+            .panel-item{
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
             .item{
                 width: 100%;
                 border-radius: 0.08rem;
@@ -272,37 +245,6 @@
                     box-shadow:0px 4px 8px 0px rgba(255,92,63,0.41);
                     text-align: center;
                     border-radius: 0.40rem;
-                }
-            }
-        }
-        .footer{
-            width: 100%;
-            background-color: #fff;
-            height: .65rem;
-            padding: 0.05rem 0;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            z-index: 9;
-            .nav-list{
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: space-around;
-                padding: 0.05rem 0;
-                .item{
-                    width: .5rem;
-                    font-size: 0.1rem;
-                    text-align: center;
-                    color: #AAA497;
-                    .icon{
-                        width: .24rem;
-                        height: .24rem;
-                        margin: 0 auto 0.07rem;
-                        display: block;
-                    }
-                    &.status{
-                        color: #CCA66B;
-                    }
                 }
             }
         }

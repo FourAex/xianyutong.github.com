@@ -1,9 +1,5 @@
 <template>
     <div class="binding">
-        <div class="header">
-            <img src="" class="icon" alt="">
-            <span>绑定支付宝</span>
-        </div>
         <div class="input-panel">
             <p class="row">
                 <img src="../../assets/img/bd_zfb_1@3x.png" class="icon" />
@@ -45,16 +41,6 @@
         height: 100%;
         position: relative;
         padding: 1.08rem .24rem 0;
-        .header{
-            width: 100%;
-            height: .42rem;
-            line-height: .42rem;
-            text-align: center;
-            font-size: 0.18rem;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
         .input-panel{
             width: 100%;
             .row{
