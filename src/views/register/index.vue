@@ -112,7 +112,7 @@
                     bottom: 0;
                     z-index: 2;
                     background-color: #F1EDE6;
-                    transition: transform .2s;
+                    transition: transform .3s;
                     transform: scaleX(0);
                 }
                 &:hover{

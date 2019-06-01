@@ -27,6 +27,7 @@
     font-family: 'PingFangSC-Semibold', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
     color: #000;
     display: flex;
     flex-direction: column;
