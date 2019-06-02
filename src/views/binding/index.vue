@@ -6,7 +6,7 @@
                 <input v-model="account" placeholder="请输入支付宝账号" class="input" type="text">
             </p>
             <p class="row">
-                <img src="../../assets/img/dl_sj_1@3x.png" class="icon" />
+                <img src="../../assets/img/mm.png" class="icon" />
                 <input placeholder="请输入密码" class="input" type="password">
             </p>
         </div>
