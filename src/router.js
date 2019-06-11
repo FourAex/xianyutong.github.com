@@ -10,12 +10,12 @@ export default new Router({
     {
       path: '/',
       name: 'login',
-      component: () => import(/* webpackChunkName: "about" */ './views/login/index')
+      component: () => import(/* webpackChunkName: "login" */ './views/login/index')
     },
     {
       path: '/register',
       name: 'register',
-      component: () => import(/* webpackChunkName: "about" */ './views/register/index')
+      component: () => import(/* webpackChunkName: "register" */ './views/register/index')
     },
     {
       path: '/accountDetails',
@@ -23,7 +23,7 @@ export default new Router({
       meta: {
         footer: true
       },
-      component: () => import(/* webpackChunkName: "about" */ './views/accountDetails/index')
+      component: () => import(/* webpackChunkName: "accountDetails" */ './views/accountDetails/index')
     },
     {
       path: '/binding',
@@ -31,7 +31,7 @@ export default new Router({
       meta: {
         title: '绑定支付宝'
       },
-      component: () => import(/* webpackChunkName: "about" */ './views/binding/index')
+      component: () => import(/* webpackChunkName: "binding" */ './views/binding/index')
     },
     {
       path: '/bindingResult',
@@ -39,7 +39,47 @@ export default new Router({
       meta: {
         title: '绑定支付宝'
       },
-      component: () => import(/* webpackChunkName: "about" */ './views/bindingResult/index')
+      component: () => import(/* webpackChunkName: "bindingResult" */ './views/bindingResult/index')
+    },
+    {
+      path: '/funds',
+      name: 'funds',
+      meta: {
+        footer: true
+      },
+      component: () => import(/* webpackChunkName: "funds" */ './views/funds/index')
+    },
+    {
+      path: '/balanceEnter',
+      name: 'balanceEnter',
+      meta: {
+        title: '余额转入'
+      },
+      component: () => import(/* webpackChunkName: "balanceEnter" */ './views/balanceEnter/index')
+    },
+    {
+      path: '/balanceOut',
+      name: 'balanceOut',
+      meta: {
+        title: '余额转出'
+      },
+      component: () => import(/* webpackChunkName: "balanceOut" */ './views/balanceOut/index')
+    },
+    {
+      path: '/bankCard',
+      name: 'bankCard',
+      meta: {
+        title: '我的银行卡'
+      },
+      component: () => import(/* webpackChunkName: "bankCard" */ './views/bankCard/index')
+    },
+    {
+      path: '/balanceResult',
+      name: 'balanceResult',
+      meta: {
+        title: '申请完成'
+      },
+      component: () => import(/* webpackChunkName: "balanceResult" */ './views/balanceResult/index')
     },
   ]
 })

@@ -2,6 +2,7 @@
     <div v-if="title" id="header">
         <img @click="goBack" src="../../assets/img/back.png" class="icon" alt="">
         <span>{{title}}</span>
+        <router-link v-if="path === '/balanceEnter'" tag="div" class="change-btn" to="/bankCard">换卡</router-link>
     </div>
 </template>
 
@@ -10,7 +11,8 @@
     name: "headerComponent",
     data(){
       return{
-        title: ''
+        title: '',
+        path: ''
       }
     },
     methods: {
@@ -20,6 +22,7 @@
     },
     watch: {
       '$route' (to,) {
+        this.path = to.fullPath;
         this.title = to.meta.title;
       }
     }
@@ -41,6 +44,16 @@
             left: .20rem;
             top: 50%;
             transform: translateY(-50%);
+        }
+        .change-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: .16rem;
+            font-size: .15rem;
+            color: #CCA66B;
+            color: red;
+            z-index: 19;
         }
     }
 </style>

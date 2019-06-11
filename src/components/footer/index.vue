@@ -20,19 +20,22 @@
             activeImg: require('../../assets/img/dh_sy_2@3x.png'),
             hideImg: require('../../assets/img/dh_sy_1@3x.png'),
             status: true,
-            title: '首页'
+            title: '首页',
+            path: '/accountDetails',
           },
           {
             activeImg: require('../../assets/img/dh_zj_2@3x.png'),
             hideImg: require('../../assets/img/dh_zj_1@3x.png'),
             status: false,
-            title: '资金'
+            title: '资金',
+            path: '/funds',
           },
           {
             activeImg: require('../../assets/img/dh_wd_2@3x.png'),
             hideImg: require('../../assets/img/dh_wd_1@3x.png'),
             status: false,
-            title: '我的'
+            title: '我的',
+            path: '/accountDetails',
           }
         ]
       }
@@ -41,12 +44,14 @@
       changeNav(index){
         this.navList.forEach((item,i) => {
           item.status = index === i;
+          if(index === i){
+            this.$router.push(item.path);
+          }
         })
       },
     },
     watch: {
         '$route'(to,){
-          console.log(to)
           this.footer = to.meta.footer;
         }
     }
