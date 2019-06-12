@@ -112,7 +112,7 @@
             margin: .20rem auto .34rem;
             border-radius: 0.08rem;
             background: linear-gradient(135deg,rgba(219,184,131,1) 0%,rgba(204,166,107,1) 100%);
-            box-shadow: 0px 14px 20px rgba(213, 183, 154, 0.5);
+            box-shadow: 0px 5px 10px rgba(213, 183, 154, 0.5);
             color: #fff;
             font-weight: bold;
             .title{
