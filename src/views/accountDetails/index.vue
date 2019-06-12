@@ -120,8 +120,8 @@
             }
             .account-number{
                 font-size: .24rem;
-                padding-bottom: 16px;
-                margin-bottom: .15rem;
+                padding-bottom: .10rem;
+                margin-bottom: .10rem;
                 border-bottom: 1px solid rgba(255,255,255,.26);
             }
             .info{
@@ -135,7 +135,7 @@
                         padding-left: .16rem;
                         &:after{
                             content: ' ';
-                            width: 2px;
+                            width: 1px;
                             height: 50%;
                             background-color: #fff;
                             opacity: 0.26;
@@ -174,7 +174,7 @@
                 width: 100%;
                 border-radius: 0.08rem;
                 background-color: #FAFAFA;
-                padding: .20rem .16rem .16rem;
+                padding: .20rem .16rem 0;
                 font-weight: 500;
                 margin-bottom: 0.16rem;
                 .title{
@@ -202,15 +202,13 @@
                             padding-left: .16rem;
                             &:after{
                                 content: ' ';
-                                width: 2px;
+                                width: 1px;
                                 height: 50%;
                                 background-color: #f1e9e9;
                                 position: absolute;
                                 left: 0;
                                 top: 50%;
                                 transform: translateY(-50%);
-
-
                             }
                         }
                     }
