@@ -24,22 +24,58 @@
                 </p>
                 <p class="row date">
                     <span class="title">转账时间</span>
-                    <input placeholder="请选择时间" class="input" type="text">
+                    <input v-model="selectDate" readonly @focus="openPicker" placeholder="请选择时间" class="input" type="text">
                     <img src="../../assets/img/back.png" class="icon" />
                 </p>
             </div>
         </div>
 
         <div @click="goToResult" class="submit-btn">提交申请</div>
+
+        <mt-datetime-picker
+                ref="picker"
+                type="datetime"
+                v-model="pickerVisible"
+                @confirm="handleConfirm">
+        </mt-datetime-picker>
     </div>
 </template>
 
 <script>
+
+  Date.prototype.Format = function (fmt) { //author: meizz
+    let o = {
+      "M+": this.getMonth() + 1, //月份
+      "d+": this.getDate(), //日
+      "H+": this.getHours(), //小时
+      "m+": this.getMinutes(), //分
+      "s+": this.getSeconds(), //秒
+      "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+      "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (let k in o)
+      if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+  }
+
   export default {
     name: "balanceEnter",
+    data(){
+      return{
+        pickerVisible: '',
+        selectDate: ''
+      }
+    },
     methods: {
+      openPicker() {
+        this.$refs.picker.open();
+      },
       goToResult(){
         this.$router.push('./balanceResult');
+      },
+      handleConfirm(date){
+        this.selectDate = new Date(date).Format('yyyy-MM-dd HH:mm:ss');
       }
     }
   }
@@ -149,7 +185,7 @@
                     content: " ";
                     display: block;
                     width: 100%;
-                    height: 2px;
+                    height: 1px;
                     position: absolute;
                     left: 0;
                     bottom: 0;

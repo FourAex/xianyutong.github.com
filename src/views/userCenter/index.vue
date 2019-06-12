@@ -47,6 +47,7 @@
 </template>
 
 <script>
+  import {MessageBox} from 'mint-ui';
   export default {
     name: "userCenter",
     data(){
@@ -56,6 +57,11 @@
     },
     methods: {
         update(){
+          MessageBox.confirm('是否升级到1.1.1版本?').then(action => {
+            console.log(action)
+          }).catch(() => {
+            console.log(111)
+          });
         }
     }
   }

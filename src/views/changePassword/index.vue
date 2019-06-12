@@ -77,7 +77,7 @@
                     content: " ";
                     display: block;
                     width: 100%;
-                    height: 2px;
+                    height: 1px;
                     position: absolute;
                     left: 0;
                     bottom: 0;
