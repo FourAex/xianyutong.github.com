@@ -81,5 +81,53 @@ export default new Router({
       },
       component: () => import(/* webpackChunkName: "balanceResult" */ './views/balanceResult/index')
     },
+    {
+      path: '/userCenter',
+      name: 'userCenter',
+      meta: {
+        footer: true
+      },
+      component: () => import(/* webpackChunkName: "userCenter" */ './views/userCenter/index')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      meta: {
+        title: '关于闲鱼通'
+      },
+      component: () => import(/* webpackChunkName: "about" */ './views/about/index')
+    },
+    {
+      path: '/customerService',
+      name: 'customerService',
+      meta: {
+        title: '联系客服'
+      },
+      component: () => import(/* webpackChunkName: "customerService" */ './views/customerService/index')
+    },
+    {
+      path: '/changePassword',
+      name: 'changePassword',
+      meta: {
+        title: '修改密码'
+      },
+      component: () => import(/* webpackChunkName: "changePassword" */ './views/changePassword/index')
+    },
+    {
+      path: '/orderList',
+      name: 'orderList',
+      meta: {
+        title: '收单列表'
+      },
+      component: () => import(/* webpackChunkName: "orderList" */ './views/orderList/index')
+    },
+    {
+      path: '/orderDetails',
+      name: 'orderDetails',
+      meta: {
+        title: '收单详情'
+      },
+      component: () => import(/* webpackChunkName: "orderDetails" */ './views/orderDetails/index')
+    },
   ]
 })

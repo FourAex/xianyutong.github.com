@@ -35,7 +35,7 @@
             hideImg: require('../../assets/img/dh_wd_1@3x.png'),
             status: false,
             title: '我的',
-            path: '/accountDetails',
+            path: '/userCenter',
           }
         ]
       }
